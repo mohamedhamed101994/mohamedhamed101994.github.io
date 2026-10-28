@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reporting Automation — Mohamed Hamed</title>
+<meta name="description" content="A Python pipeline that checks incoming CSV report files before they reach SQL Server — so bad data never reaches the database or the Power BI reports built on it.">
+<meta name="color-scheme" content="dark light">
+<meta name="author" content="Mohamed Hamed Ahmed">
+<link rel="canonical" href="https://mohamedhamed101994.github.io/projects/reporting-automation.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Reporting Automation — Mohamed Hamed">
+<meta property="og:description" content="A Python pipeline that checks incoming CSV report files before they reach SQL Server — so bad data never reaches the database or the Power BI reports built on it.">
+<meta property="og:url" content="https://mohamedhamed101994.github.io/projects/reporting-automation.html">
+<meta property="og:image" content="https://mohamedhamed101994.github.io/assets/img/covers/automation.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script>(function(){var t=null;try{t=localStorage.getItem("theme")}catch(e){}if(!t)t=window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.setAttribute("data-theme",t)})()</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a><nav class="top" aria-label="Main"><div class="c">
+<a class="logo" href="../index.html"><b>MH</b>Mohamed Hamed</a>
+<div class="links" id="nav-links"><a href="../index.html#about">About</a><a href="../index.html#skills">Skills</a><a href="../index.html#projects">Projects</a><a href="../index.html#experience">Experience</a><a href="../index.html#certifications">Certifications</a><a href="../index.html#contact">Contact</a></div>
+<div class="nav-r">
+<button class="icon-btn theme-btn" type="button" aria-label="Switch theme"><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+<button class="icon-btn menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a class="btn p" href="../assets/cv/Mohamed_Hamed_CV.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>Download CV</a>
+</div></div></nav>
+<main id="main"><div class="c">
+<a class="crumb" href="../index.html#projects"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg> All projects</a>
+<div class="eh">Case study · Python · SQL Server · Automation</div>
+<h1 class="ph">Reporting Automation</h1>
+<p class="lead">A Python pipeline that checks incoming CSV report files before they reach SQL Server — so bad data never reaches the database or the Power BI reports built on it.</p>
+<img class="cover" src="../assets/img/covers/automation.jpg" alt="Reporting Automation cover" width="2016" height="600">
+<div class="two"><article><h2>Business problem</h2><p>Manual checks on incoming report files let bad data slip through to the database and to downstream reports.</p>
+<h2>Workflow</h2><div class="flow"><span>Incoming CSV files</span><i>→</i><span>Validation</span><i>→</i><span>SQL Server staging</span><i>→</i><span>Power BI</span></div>
+<p>Files that fail validation go to a <strong>Rejected</strong> folder with an error log instead.</p>
+<h2>Approach</h2><ul>
+<li>Scan an incoming folder and check each new CSV file.</li>
+<li>Validate required columns, missing values, numeric scores within 0–100, valid dates and duplicate records.</li>
+<li>Load valid files into a SQL Server staging table with SQLAlchemy (<code>fast_executemany</code>), then move them to a Processed folder.</li>
+<li>Move invalid files to a Rejected folder with an error log that explains each failure.</li>
+<li>Keep connection settings in an environment file, not in the code.</li>
+</ul>
+</article><aside class="side" aria-label="Project details"><h3>At a glance</h3><dl><dt>Type</dt><dd>Personal project</dd></dl><h3>Tools</h3><div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">SQLAlchemy</span><span class="tag">pyodbc</span><span class="tag">SQL Server</span><span class="tag">python-dotenv</span><span class="tag">Git/GitHub</span></div><h3>Links</h3><a class="btn p" href="https://github.com/mohamedhamed101994/Reporting-Automation" target="_blank" rel="noopener">GitHub repo<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a><a class="btn" href="https://www.linkedin.com/feed/update/urn:li:activity:7520761577235566592/" target="_blank" rel="noopener">LinkedIn post<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></aside></div>
+<div class="pn"><a href="data-task-app.html"><small>← Previous</small><b>Data Task App</b></a><a class="nx" href="workforce-efficiency.html"><small>Next →</small><b>Workforce Efficiency (What-If)</b></a></div>
+</div></main>
+<footer><div class="c">
+<span>© <span id="year">2026</span> Mohamed Hamed · Dubai, UAE</span>
+<nav aria-label="Profiles"><a href="https://www.linkedin.com/in/mohamed-hamed-82b784224/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/mohamedhamed101994" target="_blank" rel="noopener">GitHub</a><a href="https://www.kaggle.com/mohamedhamed1994" target="_blank" rel="noopener">Kaggle</a></nav>
+</div></footer>
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>
