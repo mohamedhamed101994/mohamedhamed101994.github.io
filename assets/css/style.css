@@ -229,3 +229,27 @@ footer a:hover{color:var(--text)}
 .langs span{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin-right:8px}
 h1{font-size:54px}
 @media(max-width:760px){h1{font-size:36px}.path{gap:10px}.path b{font-size:15px}.path .rl{font-size:12px}}
+
+/* Round 2: job title in the hero */
+.role-title{margin-top:18px;font-size:22px;font-weight:700;letter-spacing:-.01em;color:var(--text)}
+.role-title + h1{margin-top:10px}
+@media(max-width:760px){.role-title{font-size:18px}}
+
+/* Talabat role progression inside the job card */
+.steps{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 12px}
+.steps li{display:flex;flex-direction:column;gap:1px;padding:8px 12px;border-radius:10px;background:color-mix(in srgb,var(--acc) 8%,transparent);border:1px solid var(--line);font-size:13.5px}
+.steps li b{font-weight:600}
+.steps li span{color:var(--muted);font-size:12.5px;font-variant-numeric:tabular-nums}
+
+/* Certifications: two sub-lists */
+.sub-h{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:8px 0 14px}
+.certs + .sub-h{margin-top:34px}
+.courses{list-style:none;border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:hidden}
+.courses li{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:16px;align-items:center;padding:14px 18px;border-top:1px solid var(--line)}
+.courses li:first-child{border-top:0}
+.courses h4{font-size:15px;font-weight:600}
+.courses p{font-size:13px;color:var(--muted)}
+.courses .yr{font-size:13px;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums;min-width:38px;text-align:right}
+.courses .view{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--acc)}
+.courses .view svg{width:13px;height:13px}
+@media(max-width:760px){.courses li{grid-template-columns:minmax(0,1fr) auto;gap:6px 12px}.courses .yr{grid-row:1;grid-column:2}.courses .view{grid-column:1}}
